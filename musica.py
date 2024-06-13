@@ -1,10 +1,13 @@
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
 
-@app.route('/inicio')
-def helo():
-    return "<h4>Seja bem Vindo Ao Flask</h4>"
+
+@app.route('/musicas')
+def listaMusicas():
+    return render_template('lista_musica.html',
+                           titulo = 'Musica') 
+
 
 app.run()
