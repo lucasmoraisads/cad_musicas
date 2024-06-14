@@ -25,29 +25,15 @@
             <th>Genero</th>
         </tr>
 
+        
+        {% for musica in musicas %}
         <tr>
-            <td>Ousadia e alegria</td>
-            <td>Thiaguinho</td>
-            <td>Pagode</td>
+            <td>{{musica.nome}}</td>
+            <td>{{musica.cantorBanda}}</td>
+            <td>{{musica.genero}}</td>
         </tr>
-
-        <tr>
-            <td>Black in Black</td>
-            <td>ACDC</td>
-            <td>Rock</td>
-        </tr>
-
-        <tr>
-            <td>Isis</td>
-            <td>Mc Kako</td>
-            <td>Funk</td>
-        </tr>
-
-        <tr>
-            <td>Aperta start</td>
-            <td>Delacruz</td>
-            <td>Pop</td>
-        </tr>
+        {% endfor %}
+        
     </table>
     
 </body>
