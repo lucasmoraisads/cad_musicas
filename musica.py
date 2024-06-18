@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session
 
 class Musica:
     def __init__(self, nome, cantorGrupoBanda, genero):
@@ -15,6 +15,7 @@ lista = [musica01, musica02, musica03]
 
 app = Flask(__name__)
 
+app.secret_key = 'aprendendoFlask'
 
 @app.route('/')
 def listaMusicas():
@@ -41,4 +42,22 @@ def adicionar_musica():
     lista.append(novaMusica)
 
     return redirect('/')
+
+@app.route('/login')
+def login():
+    
+    return render_template('login.html')
+    
+@app.route('/autenticar', methods=['POST',])
+def autenticar():
+    if request.form['senha'] == 'admin':
+        
+        session['usuario_logado'] = request.form['login']
+        
+        return redirect('/')
+    else:
+        return redirect('/login')
+
+
+
 app.run(debug=True)
