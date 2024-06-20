@@ -3,38 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista Musicas</title>
-    <style type="text/css">
-    
-        table, td, th{
-            border: 1px solid black;
-        }
-      
+    <link rel="stylesheet" href="/static/bootstrap.css">
 
-
-    </style>
 </head>
 <body>
 
-    <h2>Musicas Cadastradas - {{titulo}}</h2>
+    <div class="container">
 
-    <table>
+        <h2>Musicas Cadastradas - {{titulo}}</h2>
 
-        <tr>
-            <th>Musica</th>
-            <th>Canto / Grupo / Banda</th>
-            <th>Genero</th>
-        </tr>
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Musica</th>
+                    <th>Canto / Grupo / Banda</th>
+                    <th>Genero</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for musica in musicas %}
+                <tr>
+                    <td>{{musica.nome}}</td>
+                    <td>{{musica.cantorBanda}}</td>
+                    <td>{{musica.genero}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
 
-        
-        {% for musica in musicas %}
-        <tr>
-            <td>{{musica.nome}}</td>
-            <td>{{musica.cantorBanda}}</td>
-            <td>{{musica.genero}}</td>
-        </tr>
-        {% endfor %}
-        
-    </table>
-    
+        </table>
+    </div>
 </body>
 </html>

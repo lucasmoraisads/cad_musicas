@@ -3,21 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastra Musicas</title>
+    <link rel="stylesheet" href="/static/bootstrap.css">
 </head>
 <body>
+    <div class="container">
+        <form method="post" action="/adicionar">
+            <fieldset>
+                <legend>Digite as Informações da Musica</legend>
 
-    <form method="post" action="/adicionar">
-        <label for="">Nome da Musica:</label>
-        <input type="text" name="nome"><br>
-        <label for="">Cantor | Banda | Grupo:</label>
-        <input type="text" name="cantor"><br>
-        <label for="">Genero:</label>
-        <input type="text" name="genero"><br>
-        
-        <button type="submit">Cadastra Musica
-        </button>
+                <div class="mb-3">
+                    <label for="">Nome da Musica:</label>
+                    <input type="text" name="nome" class="form-control"><br>
+                </div>
 
-    </form>
-    
+                <div class="mb-3">
+                    <label for="">Cantor | Banda | Grupo:</label>
+                    <input type="text" name="cantor" class="form-control"><br>
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Genero:</label>
+                    <input type="text" name="genero" class="form-control"><br>
+                </div>
+                
+                <div class="mb-3" >
+                    <button type="submit">Cadastra Musica
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
 </body>
 </html>
