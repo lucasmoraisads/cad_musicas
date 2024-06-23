@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="/static/bootstrap.css">
 </head>
 <body>
     
     <form method="post" action="autenticar">
         <fieldset>
-            <legend>Entre com suas Informações</legend>
+            <div>
+                <label for="login">Login</label><br>
+                <input type="text" name="login" id="login"><br>
+            </div> 
 
-            <label for="">Login</label>
-            <input type="text" name="login"><br>
+            <div>   
+                <label for="senha">Senha</label><br>
+                <input type="password" name="senha" id="senha"><br>
+            </div>
 
-            <label for="">Senha</label>
-            <input type="password" name="senha"><br>
-
-            <button type="submit">Logar</button>
-
+            <div>
+                <button type="submit" class="btn btn-primary">Logar</button>
+            </div>
         </fieldset>
     </form>
 
