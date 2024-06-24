@@ -6,25 +6,36 @@
     <link rel="stylesheet" href="/static/bootstrap.css">
 </head>
 <body>
-    
-    <form method="post" action="autenticar">
-        <fieldset>
-            <div class="mb-3">
-                <label for="login">Login</label><br>
-                <input type="text" class="form-control" name="login" id="login"><br>
-            </div> 
 
-            <div class="mb-3">   
-                <label for="senha">Senha</label><br>
-                <input type="password" class="form-control" name="senha" id="senha"><br>
-            </div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="list-unstyled" id="menssages">
+                    {% for message in messages %}
+                        <li class="alert alert-danger">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
 
-            <div class="mb-3">
-                <button type="submit" class="btn btn-primary">Logar</button>
-            </div>
-        </fieldset>
-    </form>
+    <div class="container">
+        <form method="post" action="autenticar">
+            <fieldset>
+                <div class="mb-3">
+                    <label for="login">Login</label><br>
+                    <input type="text" class="form-control" name="login" id="login"><br>
+                </div> 
 
+                <div class="mb-3">   
+                    <label for="senha">Senha</label><br>
+                    <input type="password" class="form-control" name="senha" id="senha"><br>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Logar</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
 
 
 </body>
