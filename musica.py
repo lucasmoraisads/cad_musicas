@@ -25,7 +25,7 @@ usuario03 = Usuario("jhessyca", "jhessyca", "12345")
 usuarios = {
     usuario01.login : usuario01,
     usuario02.login : usuario02,
-    usuario03.login : usuario03  
+    usuario03.login : usuario03
 }
 
 app = Flask(__name__)
