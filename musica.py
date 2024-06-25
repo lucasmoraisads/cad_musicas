@@ -13,14 +13,14 @@ musica03 = Musica('Bem melhor', 'Lagum', 'Pop')
 lista = [musica01, musica02, musica03]
 
 class Usuario:
-    def __ini__(self, nome, login, senha):
+    def __init__(self, nome, login, senha):
         self.nome = nome
         self.login = login
         self.senha = senha
         
 usuario01 = Usuario("Lucas Morais", "lucas", "admin01")
-usuario02 = Usuario("Geo", "Geo", "Geo123")
-usuario03 = Usuario("jhessyca", "jhessyca", "12345")
+usuario02 = Usuario("pedro", "user", "user123")
+usuario03 = Usuario("ana", "ana", "12345")
 
 usuarios = {
     usuario01.login : usuario01,
@@ -81,9 +81,13 @@ def autenticar():
         
             session['usuario_logado'] = request.form['login']
         
-            flash("Usuario Logado com Sucesso!")
+            flash(f"Usuario {usuarioEncontrado.nome} Logado com Sucesso!")
         
             return redirect(url_for('listaMusicas'))
+        
+        else:
+            flash("Senha invalida")
+            return redirect(url_for('login'))
     else:
         flash("Usuario ou Senha invalida!")
         
